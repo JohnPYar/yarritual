@@ -1,0 +1,40 @@
+<modification>
+	<id>univer - catalog - controller - module</id>
+	<version>1.5.6.x</version>
+	<vqmver>2.4.1</vqmver>
+	<author>univer</author>
+
+	<file name="catalog/controller/checkout/cart.php">
+		<operation>
+		<search position="replace"><![CDATA[
+		$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
+		]]></search>
+
+		<add><![CDATA[
+		$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'),  $this->url->link('checkout/checkout'));
+		]]></add>
+	</operation>
+	</file>
+		<file name="catalog/language/russian/checkout/cart.php">
+		<operation>
+		<search position="replace"><![CDATA[
+		$_['text_success']           = 'Товар <a href="%s">%s</a> добавлен в <a href="%s">корзину покупок</a>!';
+		]]></search>
+
+		<add><![CDATA[
+		$_['text_success']           = 'Товар <a href="%s">%s</a> добавлен в <a href="%s">корзину покупок</a>! <a class="button" href="%s">Оформить заказ</a>';
+		]]></add>
+	</operation>
+	</file>
+	<file name="catalog/language/english/checkout/cart.php">
+		<operation>
+		<search position="replace"><![CDATA[
+		$_['text_success']           = 'Success: You have added <a href="%s">%s</a> to your <a href="%s">shopping cart</a>!';
+		]]></search>
+
+		<add><![CDATA[
+		$_['text_success']           = 'Success: You have added <a href="%s">%s</a> to your <a href="%s">shopping cart</a>! <a class="button" href="%s">Checkout</a>';
+		]]></add>
+	</operation>
+	</file>
+</modification>

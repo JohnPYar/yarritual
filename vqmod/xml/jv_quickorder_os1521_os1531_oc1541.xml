@@ -1,0 +1,35 @@
+<modification>
+	<id><![CDATA[JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)]]></id>
+	<version><![CDATA[1.1]]></version>
+	<vqmver><![CDATA[2.1.6]]></vqmver>
+	<author><![CDATA[JohnnyVega]]></author>
+	<file name="catalog/view/theme/*/template/common/header.tpl">
+		<operation error="log">
+			<search position="after"><![CDATA[<script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>]]></search>
+			<add><![CDATA[<!-- JV_Quick_Order -->
+<script type="text/javascript" src="catalog/view/javascript/jv_quickorder/jquery.validate.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/jv_quickorder/jquery.maskedinput-1.3.min.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/jv_quickorder/jv_quickorder.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/jv_bootstrap/bootstrap.min.js"></script>
+<!-- JV_Quick_Order -->
+]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/language/english/english.php">
+		<operation error="log">
+			<search position="after"><![CDATA['Get Quotes';]]></search>
+			<add><![CDATA[//JV_Quick_Order
+$_['button_jv_quick_order'] = 'Quick order';
+//JV_Quick_Order]]></add>
+		</operation>
+	</file>
+	<file name="catalog/language/russian/russian.php">
+		<operation error="log">
+			<search position="after"><![CDATA['Узнать цены';]]></search>
+			<add><![CDATA[//JV_Quick_Order
+$_['button_jv_quick_order'] = 'Быстрый заказ';
+//JV_Quick_Order]]></add>
+		</operation>
+	</file>
+</modification>

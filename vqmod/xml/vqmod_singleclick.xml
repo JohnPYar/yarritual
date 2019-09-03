@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <id>Single Click Order</id>
+    <version>1.0</version>
+    <vqmver>2.2.1</vqmver>
+    <author>Tantacula</author>
+
+    <file name="admin/controller/common/header.php">
+        <operation error="log">
+            <search position="after"><![CDATA[$this->data['home'] = $this->url->link('common/home', 'token=' . $this->session->data['token'], 'SSL');]]></search>
+            <add><![CDATA[
+					$this->data['singleclick'] = $this->url->link('module/singleclick', 'token=' . $this->session->data['token'], 'SSL');
+				]]></add>
+        </operation>
+    </file>
+    <file name="admin/view/template/common/header.tpl">
+        <operation error="log">
+            <search position="before"><![CDATA[<li id="help"><a class="top"><?php echo $text_help; ?></a>]]></search>
+            <add><![CDATA[
+					<li id="singleclick"><a class="top" href="<?php echo $singleclick; ?>">Заказы в один клик</a>
+				]]></add>
+        </operation>
+    </file>
+<file path="catalog/controller/module/" name="featured.php,univer_tabs.php">
+    <operation>
+        <search position="after">
+            <![CDATA[$this->load->model('tool/image');]]>
+        </search>
+        <add>
+            <![CDATA[
+                $this->document->addScript('catalog/view/javascript/jquery/colorbox/jquery.colorbox-min.js');
+			    $this->document->addStyle('catalog/view/javascript/jquery/colorbox/colorbox.css');
+                ]]>
+        </add>
+    </operation>
+</file>
+	
+<file path="catalog/controller/product/" name="category.php,manufacturer.php,search.php,special.php">
+    <operation>
+        <search position="after">
+            <![CDATA[$this->load->model('tool/image');]]>
+        </search>
+        <add>
+            <![CDATA[
+                $this->document->addScript('catalog/view/javascript/jquery/colorbox/jquery.colorbox-min.js');
+			    $this->document->addStyle('catalog/view/javascript/jquery/colorbox/colorbox.css');
+                ]]>
+        </add>
+    </operation>
+</file>
+
+   
+	
+
+
+</modification>

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+  <id>Обновление цены при выборе опций (без AJAX)</id>
+  <version>2.0.9</version>
+  <vqmver>2.2.1</vqmver>
+  <author>mpn2005</author>
+  
+  <file name="catalog/view/theme/default/template/product/product.tpl">
+    <operation error="skip">                           
+      <search position="replace"><![CDATA[<span class="price-old"><?php echo $price; ?></span>]]></search>
+      <add><![CDATA[<span id="formated_price" class="price-old" price="<?php echo $price_value; ?>"><?php echo $price; /**/ ?></span>]]></add>
+    </operation>        
+    <operation error="skip">                           
+      <search position="replace"><![CDATA[<?php echo $special; ?>]]></search>
+      <add><![CDATA[<span id="formated_special" price="<?php echo $special_value; ?>"><?php echo $special; /**/ ?></span>]]></add>
+    </operation>        
+    <operation>
+      <search position="replace"><![CDATA[<?php echo $price; ?>]]></search>
+      <add><![CDATA[<span id="formated_price" price="<?php echo $price_value; ?>"><?php echo $price; ?></span>]]></add>
+    </operation>
+    
+    <!-- Вывод цены без налога -->
+    <operation error="skip">      
+      <search position="replace"><![CDATA[<?php echo $tax; ?>]]></search>
+      <add><![CDATA[<span id="formated_tax" price="<?php echo $tax_value; ?>"><?php echo $tax; ?></span>]]></add>
+    </operation>        
+    
+    <operation>
+      <search position="replace"><![CDATA[<select name="option[<?php echo $option['product_option_id']; ?>]">]]></search>
+      <add><![CDATA[<select name="option[<?php echo $option['product_option_id']; ?>]" onchange="recalculateprice();">]]></add>
+    </operation>
+    <operation>
+      <search position="replace"><![CDATA[<div class="options">]]></search>
+      <add><![CDATA[<div class="options" id="product_options">]]></add>
+    </operation>
+    <operation>
+      <search position="replace"><![CDATA[<option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>]]></search>
+      <add><![CDATA[<option value="<?php echo $option_value['product_option_value_id']; ?>"  points="<?php echo $option_value['points_value']; ?>" price_prefix="<?php echo $option_value['price_prefix']; ?>" price="<?php echo $option_value['price_value']; ?>"><?php echo $option_value['name']; ?>]]></add>
+    </operation>
+    <operation>
+      <search position="before"><![CDATA[<?php foreach ($option['option_value'] as $option_value) { ?>]]></search>
+      <add><![CDATA[<?php $opt_checked="checked"; ?>]]></add>
+    </operation>
+    <operation>
+      <search position="replace"><![CDATA[<input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />]]></search>
+      <add><![CDATA[<input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"  points="<?php echo $option_value['points_value']; ?>" price_prefix="<?php echo $option_value['price_prefix']; ?>" price="<?php echo $option_value['price_value']; ?>" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" <?php echo $opt_checked; $opt_checked=""; ?> onchange="recalculateprice();" />]]></add>
+    </operation>
+    <operation>
+      <search position="replace"><![CDATA[<input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />]]></search>
+      <add><![CDATA[<input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]"  points="<?php echo $option_value['points_value']; ?>" price_prefix="<?php echo $option_value['price_prefix']; ?>" price="<?php printf("%.5f", $option_value['price_value']); ?>" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" onchange="recalculateprice();" />]]></add>
+    </operation>
+    <operation>
+      <search position="replace"><![CDATA[<option value=""><?php echo $text_select; ?></option>]]></search>
+      <add><![CDATA[  ]]></add>
+      <!-- <add><![CDATA[<option value=""  price_prefix="+" price="0.0"><?php echo $text_select; ?></option>]]></add> -->
+    </operation>
+    <operation>
+      <search position="replace"><![CDATA[name="quantity"]]></search>
+      <add><![CDATA[name="quantity" id="product_buy_quantity" oninput="recalculateprice();" ]]></add>
+    </operation>
+    
+    <!-- points -->
+    <operation error="skip">
+      <search position="replace"><![CDATA[<?php echo $points; ?>]]></search>
+      <add><![CDATA[<span id="formated_points" points="<?php echo $points; /**/ ?>"><?php echo $points; /**/ ?></span>]]></add>
+    </operation>
+    
+    <!-- 2012-12-15 21:51: Для опции умножить свой вывод -->    
+    <operation>
+      <search position="replace"><![CDATA[(<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)]]></search>
+      <add>
+        <![CDATA[
+          <?php
+          if ($option_value['price_prefix'] == '*') {
+            if ($option_value['price_value'] != 1.0)
+              printf("(%+d%%)", ($option_value['price_value'] * 100) - 100 );
+          } else {
+            echo "(".$option_value['price_prefix'].$option_value['price'].")"; 
+          }
+          ?>
+        ]]>
+      </add>
+    </operation>
+    <operation>
+      <search position="before"><![CDATA[<?php echo $footer; ?>]]></search>
+      <add>
+        <![CDATA[
+<script type="text/javascript"><!--
+
+function price_format(n)
+{ 
+    c = <?php echo (empty($currency['decimals']) ? "0" : $currency['decimals'] ); ?>;
+    d = '<?php echo $currency['decimal_point']; ?>'; // decimal separator
+    t = '<?php echo $currency['thousand_point']; ?>'; // thousands separator
+    s_left = '<?php echo $currency['symbol_left']; ?>';
+    s_right = '<?php echo $currency['symbol_right']; ?>';
+      
+    n = n * <?php echo $currency['value']; ?>;
+
+    //sign = (n < 0) ? '-' : '';
+
+    //extracting the absolute value of the integer part of the number and converting to string
+    i = parseInt(n = Math.abs(n).toFixed(c)) + ''; 
+
+    j = ((j = i.length) > 3) ? j % 3 : 0; 
+    return s_left + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '') + s_right; 
+}
+
+function calculate_tax(price)
+{
+    <?php // Process Tax Rates
+      if (isset($tax_rates)) {
+         foreach ($tax_rates as $tax_rate) {
+           if ($tax_rate['type'] == 'F') {
+             echo 'price += '.$tax_rate['rate'].';';
+           } elseif ($tax_rate['type'] == 'P') {
+             echo 'price += (price * '.$tax_rate['rate'].') / 100.0;';
+           }
+         }
+      }
+    ?>
+    return price;
+}
+
+function process_discounts(price, quantity)
+{
+    <?php
+      foreach ($dicounts_unf as $discount) {
+        echo 'if ((quantity >= '.$discount['quantity'].') && ('.$discount['price'].' < price)) price = '.$discount['price'].';'."\n";
+      }
+    ?>
+    return price;
+}
+
+function recalculateprice()
+{
+    var main_price = Number($('#formated_price').attr('price'));
+    var input_quantity = Number($('#product_buy_quantity').attr('value'));
+    var special = Number($('#formated_special').attr('price'));
+    var tax = Number($('#formated_tax').attr('price'));
+    
+    // Process Discounts.
+    main_price = process_discounts(main_price, input_quantity);
+    tax = process_discounts(tax, input_quantity);
+    
+    
+   <?php if ($points) { ?>
+     var points = Number($('#formated_points').attr('points'));
+     $('#product_options input:checked').each(function() {
+       points += Number($(this).attr('points'));
+     });
+     $('#product_options option:selected').each(function() {
+       points += Number($(this).attr('points'));
+     });
+     $('#formated_points').html(points);
+   <?php } ?>
+    
+    
+    $('#product_options input:checked,option:selected').each(function() {
+      if ($(this).attr('price_prefix') == '=') {
+        main_price = Number($(this).attr('price'));
+        special = main_price;
+        tax = main_price;
+      }
+    });
+    
+    $('#product_options input:checked,option:selected').each(function() {
+      if ($(this).attr('price_prefix') == '+') {
+        main_price += Number($(this).attr('price'));
+        special += Number($(this).attr('price'));
+        tax += Number($(this).attr('price'));
+      }
+      if ($(this).attr('price_prefix') == '-') {
+        main_price -= Number($(this).attr('price'));
+        special -= Number($(this).attr('price'));
+        tax -= Number($(this).attr('price'));
+      }
+      if ($(this).attr('price_prefix') == '*') {
+        main_price = main_price * Number($(this).attr('price'));
+        special = special * Number($(this).attr('price'));
+        tax = tax * Number($(this).attr('price'));
+      }
+    });
+
+    // Process TAX.
+    main_price = calculate_tax(main_price);
+    special = calculate_tax(special);
+    
+    // Display Main Price
+    $('#formated_price').html( price_format(main_price) );
+      
+    <?php if ($special) { ?>
+      $('#formated_special').html( price_format(special) );
+    <?php } ?>
+
+    <?php if ($tax) { ?>
+      $('#formated_tax').html( price_format(tax) );
+    <?php } ?>
+}
+
+recalculateprice();
+
+//--></script>
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file name="catalog/model/catalog/product.php">
+    <operation>
+      <search position="before"><![CDATA['weight'                  => $product_option_value['weight'],]]></search>
+      <add>
+        <![CDATA[
+          'points'        => $product_option_value['points'],
+          'points_prefix' => $product_option_value['points_prefix'],
+        ]]>
+     </add>
+    </operation>
+  </file>
+  
+  <file name="catalog/controller/product/product.php">
+    <operation>
+      <search position="before"><![CDATA[$this->data['options'] = array();]]></search>
+      <add>
+        <![CDATA[
+          $this->data['price_value'] = $product_info['price'];
+          $this->data['special_value'] = $product_info['special'];
+          $this->data['tax_value'] = (float)$product_info['special'] ? $product_info['special'] : $product_info['price'];
+          
+          $var_currency = array();
+          $var_currency['value'] = $this->currency->getValue();
+          $var_currency['symbol_left'] = $this->currency->getSymbolLeft();
+          $var_currency['symbol_right'] = $this->currency->getSymbolRight();
+          $var_currency['decimals'] = $this->currency->getDecimalPlace();
+          $var_currency['decimal_point'] = $this->language->get('decimal_point');
+          $var_currency['thousand_point'] = $this->language->get('thousand_point');
+          $this->data['currency'] = $var_currency;
+          
+          $this->data['dicounts_unf'] = $discounts;
+
+          $this->data['tax_class_id'] = $product_info['tax_class_id'];
+          $this->data['tax_rates'] = $this->tax->getRates(0, $product_info['tax_class_id']);
+        ]]>
+     </add>
+    </operation>
+    <operation>
+      <search position="after"><![CDATA[$option_value_data[] = array(]]></search>
+      <add>
+        <![CDATA[
+          'price_value'                   => $option_value['price'],
+          'points_value'                  => intval($option_value['points_prefix'].$option_value['points']),
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  
+  <!--
+  ############ SHOPPICA 2 START ###################################################
+  -->
+  <file name="catalog/view/theme/shoppica2/template/product/product.tpl">
+    <operation error="skip">
+      <search position="replace"><![CDATA[<?php echo $tbData->priceFormat($special); ?>]]></search>
+      <add><![CDATA[<span price="<?php echo $special_value; ?>" id="formated_special"><?php echo $tbData->priceFormat($special); ?></span>]]></add>
+    </operation>
+    <operation error="skip">
+      <search position="replace"><![CDATA[<?php echo $tbData->priceFormat($price); ?>]]></search>
+      <add><![CDATA[<span price="<?php echo $price_value; ?>" id="formated_price"><?php echo $tbData->priceFormat($price); ?></span>]]></add>
+    </operation>
+    <operation error="skip">
+      <search position="replace"><![CDATA[<?php echo $tax; ?>]]></search>
+      <add><![CDATA[<span price="<?php echo $tax_value; ?>" id="formated_tax"><?php echo $tax; ?></span>]]></add>
+    </operation>
+    <operation error="skip">
+      <search position="replace"><![CDATA[<input id="product_buy_quantity" type="text" name="quantity" size="2" value="<?php echo $minimum; ?>" />]]></search>
+      <add><![CDATA[<input id="product_buy_quantity" type="text" name="quantity" size="2" value="<?php echo $minimum; ?>" oninput="recalculateprice();" />]]></add>
+    </operation>
+    <!-- points -->
+    <operation error="skip">
+      <search position="replace"><![CDATA[<?php echo $points; ?>]]></search>
+      <add><![CDATA[<span id="formated_points" points="<?php echo $points; /**/ ?>"><?php echo $points; /**/ ?></span>]]></add>
+    </operation>
+    <operation error="skip">
+      <search position="before"><![CDATA[<?php echo $footer; ?>]]></search>
+      <add>
+        <![CDATA[
+<script type="text/javascript"><!--
+
+function price_format(n)
+{ 
+    c = <?php echo $currency['decimals']; ?>;
+    d = '<?php echo $currency['decimal_point']; ?>'; // decimal separator
+    t = '<?php echo $currency['thousand_point']; ?>'; // thousands separator
+    s_left = '<?php echo $currency['symbol_left']; ?>';
+    s_right = '<?php echo $currency['symbol_right']; ?>';
+      
+    n = n * <?php echo $currency['value']; ?>;
+
+    //sign = (n < 0) ? '-' : '';
+
+    //extracting the absolute value of the integer part of the number and converting to string
+    i = parseInt(n = Math.abs(n).toFixed(c)) + ''; 
+
+    j = ((j = i.length) > 3) ? j % 3 : 0; 
+    return s_left + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '') + s_right; 
+}
+
+function calculate_tax(price)
+{
+    <?php // Process Tax Rates
+      if (isset($tax_rates)) {
+         foreach ($tax_rates as $tax_rate) {
+           if ($tax_rate['type'] == 'F') {
+             echo 'price += '.$tax_rate['rate'].';';
+           } elseif ($tax_rate['type'] == 'P') {
+             echo 'price += (price * '.$tax_rate['rate'].') / 100.0;';
+           }
+         }
+      }
+    ?>
+    return price;
+}
+
+function process_discounts(price, quantity)
+{
+    <?php
+      foreach ($dicounts_unf as $discount) {
+        echo 'if ((quantity >= '.$discount['quantity'].') && ('.$discount['price'].' < price)) price = '.$discount['price'].';'."\n";
+      }
+    ?>
+    return price;
+}
+
+function recalculateprice()
+{
+    var main_price = Number($('#formated_price').attr('price'));
+    var input_quantity = Number($('#product_buy_quantity').attr('value'));
+    var special = Number($('#formated_special').attr('price'));
+    var tax = Number($('#formated_tax').attr('price'));
+    
+    var options_price = 0;
+
+    // Process Discounts.
+    main_price = process_discounts(main_price, input_quantity);
+    tax = process_discounts(tax, input_quantity);
+    
+    
+   <?php if ($points) { ?>
+     var points = Number($('#formated_points').attr('points'));
+     $('#product_options input:checked').each(function() {
+       points += Number($(this).attr('points'));
+     });
+     $('#product_options option:selected').each(function() {
+       points += Number($(this).attr('points'));
+     });
+     $('#formated_points').html(points);
+   <?php } ?>
+    
+    
+    $('#product_options input:checked').each(function() {
+      if ($(this).attr('price_prefix') == '=') {
+        main_price = Number($(this).attr('price'));
+        special = main_price;
+        tax = main_price;
+      }
+    });
+    $('#product_options option:selected').each(function() {
+      if ($(this).attr('price_prefix') == '=') {
+        main_price = Number($(this).attr('price'));
+        special = main_price;
+        tax = main_price;
+      }
+    });
+
+    
+    $('#product_options input:checked').each(function() {
+      if ($(this).attr('price_prefix') == '*') {
+        main_price = main_price * Number($(this).attr('price'));
+        special = special * Number($(this).attr('price'));
+        tax = tax * Number($(this).attr('price'));
+      }
+    });
+    $('#product_options option:selected').each(function() {
+      if ($(this).attr('price_prefix') == '*') {
+        main_price = main_price * Number($(this).attr('price'));
+        special = special * Number($(this).attr('price'));
+        tax = tax * Number($(this).attr('price'));
+      }
+    });
+    
+    $('#product_options input:checked').each(function() {
+      if ($(this).attr('price_prefix') == '+')
+        options_price = options_price + Number($(this).attr('price'));
+      if ($(this).attr('price_prefix') == '-')
+        options_price = options_price - Number($(this).attr('price'));
+    });
+    $('#product_options option:selected').each(function() {
+      if ($(this).attr('price_prefix') == '+')
+        options_price = options_price + Number($(this).attr('price'));
+      if ($(this).attr('price_prefix') == '-')
+        options_price = options_price - Number($(this).attr('price'));
+    });
+
+    // Calculate new price (With options).
+    var new_price = main_price + options_price;
+    var new_tax = tax + options_price;
+    var new_special = special + options_price;
+        
+    // Process TAX.
+    new_price = calculate_tax(new_price);
+    new_special = calculate_tax(new_special);
+    
+    // Display Main Price
+    $('#formated_price').html( price_format(new_price) );
+      
+    <?php if ($special) { ?>
+      //if (new_special > new_price)  new_special = new_price;
+      $('#formated_special').html( price_format(new_special) );
+    <?php } ?>
+
+    <?php if ($tax) { ?>
+      $('#formated_tax').html( price_format(new_tax) );
+    <?php } ?>
+}
+
+recalculateprice();
+
+//--></script>
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file name="catalog/view/theme/shoppica2/template/product/product_options.tpl">
+    <operation error="skip">
+      <search position="before"><![CDATA[<?php foreach ($option['option_value'] as $option_value): ?>]]></search>
+      <add><![CDATA[<?php $opt_checked="checked"; ?>]]></add>
+    </operation>
+    <operation error="skip">
+      <search position="replace"><![CDATA[<select name="option[<?php echo $option['product_option_id']; ?>]">]]></search>
+      <add><![CDATA[<select name="option[<?php echo $option['product_option_id']; ?>]" onchange="recalculateprice();">]]></add>
+    </operation>
+    <operation error="skip">
+      <search position="replace"><![CDATA[<option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>]]></search>
+      <add><![CDATA[<option value="<?php echo $option_value['product_option_value_id']; ?>"  points="<?php echo $option_value['points_value']; ?>" price_prefix="<?php echo $option_value['price_prefix']; ?>" price="<?php echo $option_value['price_value']; ?>"><?php echo $option_value['name']; ?>]]></add>
+    </operation>
+    <operation error="skip">
+      <search position="replace"><![CDATA[<input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />]]></search>
+      <add><![CDATA[<input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"  points="<?php echo $option_value['points_value']; ?>" price_prefix="<?php echo $option_value['price_prefix']; ?>" price="<?php echo $option_value['price_value']; ?>" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" <?php echo $opt_checked; $opt_checked=""; ?> onchange="recalculateprice();" />]]></add>
+    </operation>
+    <operation error="skip">
+      <search position="replace"><![CDATA[<input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />]]></search>
+      <add><![CDATA[<input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]"  points="<?php echo $option_value['points_value']; ?>" price_prefix="<?php echo $option_value['price_prefix']; ?>" price="<?php printf("%.5f", $option_value['price_value']); ?>" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" onchange="recalculateprice();" />]]></add>
+    </operation>
+    <operation error="skip">
+      <search position="replace"><![CDATA[<option value=""><?php echo $text_select; ?></option>]]></search>
+      <add><![CDATA[  ]]></add>
+      <!-- <add><![CDATA[<option value=""  price_prefix="+" price="0.0"><?php echo $text_select; ?></option>]]></add> -->
+    </operation>
+  </file>
+  <!--
+  ############ SHOPPICA 2 END #####################################################
+  -->
+
+</modification>

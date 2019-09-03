@@ -1,0 +1,26 @@
+<?php
+// HTTP
+define('HTTP_SERVER', 'http://xn--80aeikdp6aaeieen7n.xn--p1ai/admin/');
+define('HTTP_CATALOG', 'http://xn--80aeikdp6aaeieen7n.xn--p1ai/');
+define('HTTP_IMAGE', 'http://xn--80aeikdp6aaeieen7n.xn--p1ai/image/');
+
+// HTTPS
+define('HTTPS_SERVER', 'http://xn--80aeikdp6aaeieen7n.xn--p1ai/admin/');
+define('HTTPS_CATALOG', 'http://xn--80aeikdp6aaeieen7n.xn--p1ai/');
+define('HTTPS_IMAGE', 'http://xn--80aeikdp6aaeieen7n.xn--p1ai/image/');
+
+// DIR
+define('DIR_APPLICATION', '/var/www/yarrituals.rf/html/admin/');
+define('DIR_SYSTEM', '/var/www/yarrituals.rf/html/system/');
+define('DIR_DATABASE', '/var/www/yarrituals.rf/html/system/database/');
+define('DIR_LANGUAGE', '/var/www/yarrituals.rf/html/admin/language/');
+define('DIR_TEMPLATE', '/var/www/yarrituals.rf/html/admin/view/template/');
+define('DIR_CONFIG', '/var/www/yarrituals.rf/html/system/config/');
+define('DIR_IMAGE', '/var/www/yarrituals.rf/html/image/');
+define('DIR_CACHE', '/var/www/yarrituals.rf/html/system/cache/');
+define('DIR_DOWNLOAD', '/var/www/yarrituals.rf/html/download/');
+define('DIR_LOGS', '/var/www/yarrituals.rf/html/system/logs/');
+define('DIR_CATALOG', '/var/www/yarrituals.rf/html/catalog/');
+
+// DB
+

@@ -1,0 +1,13 @@
+<modification>
+	<id>VQMOD SeoPro</id>
+	<version>1.5.x</version>
+	<vqmver>2.1.7</vqmver>
+	<author>freelancer</author>
+
+	<file name="admin/model/*/*.php">
+		<operation>
+			<search position="after"><![CDATA[$this->cache->delete]]></search>
+			<add><![CDATA[		$this->cache->delete('seo_pro');]]></add>
+		</operation>
+	</file>
+</modification>

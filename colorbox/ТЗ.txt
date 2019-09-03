@@ -1,0 +1,18 @@
+перед </head>
+вставь
+<link rel="stylesheet" type="text/css" href="/colorbox/colorbox.css" media="screen" />
+<script type="text/javascript" src="/colorbox/jquery.colorbox-min.js"></script>
+с сайта автовинил скопируй папку colorbox
+она находиться в /catalog/view/javascript/jquery/colorbox
+потом эту папку загрузи в корень сайта селовеликое
+и потом в футере перед </body>
+вставь код 
+<script type="text/javascript"><!--
+$(document).ready(function() {
+$('.colorbox').colorbox({
+overlayClose: true,
+opacity: 0.5,
+rel: "colorbox"
+});
+});
+//--></script>

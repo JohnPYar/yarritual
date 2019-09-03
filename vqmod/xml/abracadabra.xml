@@ -1,0 +1,39 @@
+
+<modification>
+	<id><![CDATA[abracadabra]]></id>
+	<version><![CDATA[]]></version>
+	<vqmver><![CDATA[]]></vqmver>
+	<author><![CDATA[lays]]></author>
+	<file path="/admin/model/catalog/" name="category.php/">
+		<operation>
+			<search position="replace" error="log"><![CDATA[. $this->db->escape($value['description']) . "']]></search>
+			<add><![CDATA[. $this->db->escape($value['description']) . "', meta_title = '" . $this->db->escape($value['shortdescription']) . "']]></add>
+		</operation>
+		<operation>
+			<search position="after" error="log"><![CDATA[$category_description_data[$result['language_id']] = array(]]></search>
+			<add><![CDATA['shortdescription' => $result['shortdescription'],]]></add>
+		</operation>
+	</file>
+	<file path="/catalog/controller/product/" name="category.php/">
+		<operation>
+			<search position="after" error="log"><![CDATA[$this->document->setKeywords($category_info['meta_keyword']);]]></search>
+			<add><![CDATA[$this->data['shortdescription'] = $category_info['shortdescription'];]]></add>
+		</operation>
+	</file>
+	<file path="/catalog/model/catalog/" name="product.php/">
+		<operation>
+			<search position="after" error="log"><![CDATA[$query->row['name'],]]></search>
+			<add><![CDATA['shortdescription'             => $query->row['shortdescription'],]]></add>
+		</operation>
+	</file>
+	<file path="/admin/view/template/catalog/" name="category_form.tpl/">
+		<operation>
+			<search position="replace" error="log"><![CDATA[<td><?php echo $entry_description; ?></td>]]></search>
+			<add><![CDATA[ <td>Краткое описание: </td>
+                <td><textarea name="category_description[<?php echo $language['language_id']; ?>][shortdescription]" id="description<?php echo $language['language_id']; ?>"><?php echo isset($category_description[$language['language_id']]) ? $category_description[$language['language_id']]['shortdescription'] : ''; ?></textarea></td>
+              </tr>
+              <tr>
+                <td><?php echo $entry_description; ?></td>]]></add>
+		</operation>
+	</file>
+</modification>

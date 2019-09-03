@@ -1,0 +1,349 @@
+body {
+	background-color: #f4f4f4;
+	color: #666;}
+.main, .main2{
+	background-color:#FFF;
+}
+
+h1, .welcome {
+	color: #000;}
+h2, h3 {
+	color: #000;}
+a, a:visited, a b {
+	color: #000;}	
+a:hover {
+	color:#ff6600;}	
+span.select2{ background-color:#f4f4f4;} 
+.containermenu{ width:1210px; margin:0 auto;}
+.full_container .matban_box, .full_container .dropdown_category{ max-width:1210px;}
+.image_slider{ width:1210px;}
+
+#all_header{}
+	
+#header #cart .heading a, #header #cart .heading h4 {
+	color: #000;}	
+#header #cart .heading > a.bigcart{
+   background: url('../image/shopcart.png')no-repeat;}
+#header .header_topbox{background-color: #efefef;}
+		
+#header .links > div a, #header .links > div, #language span, #currency span {color: #666;}
+#header .links > div:hover a, #header .links > div:hover{ color: #fff;}	
+#header .links > div:hover{ background-color:#ff6600;}
+
+.sb-icon-search,
+.sb-search-submit  {background-color:#666;}
+
+#header .matban_box.beforetext .two{ color:#7F8C8D;}
+	
+/*menu*/
+.ma-nav-mobile-container{ background-color:#666; }	
+.menu > ul > li > a {color: #fff;}	
+.menu > ul > li:hover > a, .menu > ul > li.categories > a:hover, .menu > ul > li a.active {color:#fff;}
+.menu > ul > li:hover, .categories > a:hover, .menu > ul > li a.active {background-color: #ff6600;}	
+.menu > ul > li > div {
+	background-color: #fff; }
+.menu > ul > li > div > ul > li:hover, .menu > ul div#topbrand ul li a:hover{background-color:#f4f4f4;}
+.menu > ul > li > div > ul > li > a{ color:#000; } 	
+.menu > ul > li > div > ul > li:hover > a, .menu > ul div#topbrand ul li a:hover{ color:#ff6600;}
+ 
+.menu .topmenu ul li .level3,
+.menu > ul > li > div.topmenu_theme > ul > li > div.topmenu { 
+			   background-color:#fff;}
+.menu .topmenu ul li .level3 a,
+.menu > ul > li > div.topmenu_theme > ul > li > div.topmenu a{ }
+.menu .topmenu ul li .level3 li:hover a,
+.menu > ul > li > div.topmenu_theme > ul > li > div.topmenu li:hover > a,
+.displaymenu .menu > ul > li > div.topmenu_theme > ul > li > a:hover{ background-color:#f4f4f4; color: #ff6600} 	
+.displaymenu .menu > ul > li > div.topmenu_theme > ul > li > a{ background-color:rgba(0,0,0,0.04);}			   
+.column_brand li span{color:#ff6600;}	
+.ma-nav-mobile-container.fixed {background-color:#666;}	
+.menu > ul > li.default2 > div > ul > li > a{ background-color:rgba(0,0,0,0.04);}
+	   
+/*mobile menu*/
+.navbar .btn-navbar {}
+.navbar .btn-navbar div{
+	color:#fff;}
+
+.navbar .btn-navbar:active,
+.navbar .btn-navbar.active {
+  background-color: #fff;
+}
+.navbar .btn-navbar .icon-bar {background-color: #3f3f3f;}
+.menu1 .mobilemenu a {color:#fff;} 
+.menu1 .mobilemenu a:hover {
+	color: #fff;
+	background-color:#ff6600;
+}
+.menu1 .mobilemenu span.head a {color:#000;}
+		
+			   
+/*breadcrumb*/
+
+.breadcrumb, .breadcrumb a{ color:#666;}
+.breadcrumb a:hover{ color:#ff6600;}
+
+/*pagination*/
+.pagination .links a {
+	color: #555;
+	background-color:#eee;}
+.pagination .links b, .pagination .links a:hover  {
+	color:#FFF;
+	background-color: #666;}
+	
+/*button*/
+a.button, input.button, button.button {
+	color: #fff;
+	background-color:#666;
+	border:1px solid #666;}
+.product-grid  .hover_but > div a,
+.box-product .hover_but > div a, .block2 .hover_but > div a {
+	border:1px solid #ddd;
+}
+.cart input.button{
+	color: #000;
+	background-color:#666;}	
+	
+
+a.button:hover, input.button:hover,  a.button.registr:hover, .cart input.button:hover, .product-info .cart input.button,
+button.button:hover{
+	background-color:#ff6600;
+	color:#FFF;
+	border:1px solid #ff6600;
+	}
+ a.button.registr{ background-color:#FFF; color:#000;}
+
+.sidebar_feedback{ color:#000;background-color:rgba(0,0,0,0.03);} 
+.feedback_box .success, .feedback_box .success a{ color:#000;}		
+/*tabs*/
+.full_container .htabs {
+	background-color:#fff;}
+.htabs a {color:#000;}
+.htabs a:hover,	
+.htabs a.selected {
+ color:#ff6600;
+ border-bottom:1px solid #ff6600;
+
+}
+
+.htabs a.selected:after {
+  border-bottom: 6px solid #ff6600;}
+  
+.tab-content {
+	border-bottom:1px dotted #555;
+    border-top:1px dotted #555;
+	background-color:#FFF;
+ }
+.box-product-category {
+  	   border-top:1px dotted #555;}
+.position_center .box-content .accordeon_categ > ul > li > a{color:#000;}	
+/*box*/
+.box-heading, .box-heading a, .matban_box.beforetext .threeheading {
+	color: #000;	}
+	
+.box-heading{
+	border-bottom:1px solid #333;
+} 
+.box-heading-new{
+	border-bottom:1px dotted #555;
+}  
+
+/*box-product*/	
+.box-product  div.itemcolumns, .verticaltab .owl-item,
+.product-grid > div{
+	background-color:#fff;
+	}
+#column-left .box-content > .box-product >  div, #column-right .box-content > .box-product > div{
+	background-color:rgba(0,0,0,0.03);}	
+#column-left .box-content > .box-product >  div div, #column-right .box-content > .box-product > div div{ background-color:transparent;}		
+.box-product .name a, .compare-info .name a, .cart-info tbody .name a,
+.wishlist-info tbody .name a {
+	color: #333;}
+.box-product .name a:hover, .compare-info .name a:hover, .cart-info tbody .name a:hover,
+.wishlist-info tbody .name a:hover{ color:#ff6600;}
+.box-product .price {color: #ff6600;}
+.box-product .price-old {color: #888;}	
+.savemoney{ 
+			background:  url('../image/label.png')no-repeat;;
+			color:#fff;}
+
+					
+/* box category accordeon */	
+.box-content .accordeon_categ > ul > li,
+.position_center .box-content .accordeon_categ > ul > li,
+.position_center .box-content .accordeon_categ > ul > li:hover  {
+	background-color:#f8f8f8;}
+
+.box-content .accordeon_categ > ul > li > a,
+.position_center .box-content .accordeon_categ > ul > li > a,
+.position_center .box-content .accordeon_categ > ul > li:hover > a {
+	color:#000;
+	}
+.box-content .accordeon_categ > ul > li:hover{ }
+.box-content .accordeon_categ > ul > li:hover > a{ color:#ff6600;}
+
+
+.box-content .accordeon_categ > ul > li.cat-active {
+	}
+ .box-content .accordeon_categ > ul > li.cat-active > a.active { color:#ff6600;}
+.box-content .accordeon_categ > ul > li ul.active > li a.active,
+.dropdown_category .box-content .accordeon_categ > ul > li ul > li:hover > a { color:#ff6600;}
+	
+.box-content .accordeon_categ > ul > li > ul,
+.dropdown_category .box-category > ul > li  .all_subcat {
+	background-color: #fff;}
+
+.box-content .accordeon_categ > ul > li ul > li  a, .category-list ul li div a {
+	color:#000;
+	}
+.dropdown_category.position_center .box-content .accordeon_categ > ul > li .sub_category_child > ul > li{ 
+    background-color:#FFF;}
+	
+/*category*/
+
+.accordeon_description .accordeon_plus,
+.accordeon_description .accordeon_plus.open {
+	background-color: #fff);
+}
+
+
+.manufacturer-heading {
+	background: rgba(0, 0, 0, 0.04);}
+.product-compare a:hover div{background-color:#666;}
+
+/*product-list*/
+.product-list > div {
+	background-color:#FFF;}
+.product-list .name a {
+	color: #000;}
+.product-list .name a:hover{ color:#ff6600;}
+.product-list .price {
+	color: #ff6600;}
+.product-list .price-old {
+	color: #888;}
+.product-list .price-tax {
+	color: #BBBBBB;}
+
+
+/*product-grid*/
+
+.product-grid .name a {
+	color: #000;}				
+.product-grid .name a:hover{ color:#ff6600;}
+.product-grid .price {
+	color: #ff6600;}
+.product-grid .price-old {
+	color: #888;}
+.product-grid .wishlist a, .product-grid .compare a, .product-grid .singleclick_wrapper a,
+.box-product .wishlist a, .box-product .compare a, .box-product .singleclick_wrapper a,
+.block2 .wishlist a, .block2 .compare a, .block2 .singleclick_wrapper a{
+	color:#777;}	
+.product-grid .wishlist a:hover, .product-grid .compare a:hover, .product-grid .singleclick_wrapper a:hover,
+.box-product .wishlist a:hover, .box-product .compare a:hover, .box-product .singleclick_wrapper a:hover,
+.block2 .wishlist a:hover, .block2 .compare a:hover, .block2 .singleclick_wrapper a:hover{
+	background-position:left top;
+	background-color:#ff6600;
+}
+
+/*Product*/
+.product-info .image-additional .active img{
+	border-color:#ff6600;
+}
+
+.product-info .price {
+	color: #ff6600;}
+.product-info .price-old {
+	color: #888;}
+
+
+.product-info .review > div > span {
+	color: #38B0E3;
+}
+		
+
+/*compare*/
+.compare-info .price{ 
+    color: #ff6600;}
+.compare-info .price-old {
+	color: #888;}
+	
+/*wishlist*/
+.wishlist-info thead td {
+	background-color: #f1f1f1;}	
+	
+/*cart*/
+.cart-info thead td, .checkout-product thead td {
+	background-color: #f1f1f1;}	
+	
+.cart-total #total .right.price{color:#ff6600;}
+
+/* checkout */
+.checkout-heading {
+	background-color: #f1f1f1;
+	padding:16px;
+	color: #555;	}
+
+.checkout-product tfoot td.total{
+	color: #ff6600;}
+	
+/*footer*/
+	
+#footer {
+	color:#ccc;
+	background-color: #222;	
+}
+
+#footer h3 {
+	color: #fff;
+	}
+#footer a{
+	color: #ccc;
+}
+
+#footer .column li:hover{
+	background-color: rgba(0, 0, 0, 0.06);
+}
+#powered { background-color:#666; color:#ccc;}
+#powered a{color:#ccc;}
+
+	
+/*Module univer Categories*/
+
+.block2 .name a {
+	color: #000;}
+.block2 .name a:hover{ color:#ff6600;}
+.block2 .price {
+	color: #ff6600;}
+.block2 .price-old {
+	color: #888;}	
+
+
+		
+/*news*/
+.heading_news_mod a {}
+.heading_news_mod a:hover {}
+a.readmore {
+	background-color:#666;
+	color:#FFF;}
+a.readmore:hover{ background-color: #ff6600;}	
+.datepost{ color:#888;}			
+
+#topcontrol{ background-color:#666;}
+
+/*Module Banner*/
+#navbox.light h2, #navbox.light div, #navbox.light #urlmore {color:#fff; }
+#navbox.dark h2, #navbox.dark div, #navbox.dark #urlmore {color:#333; }
+
+#navbox.light #urlmore {border-bottom:1px dotted #fff;}
+#navbox.dark #urlmore {border-bottom:1px dotted #333;}
+	 
+.matban_box.maska_text .dark .textbanner2, .matban_box.slider_banner .dark .textbanner2 { color:#333;}
+.matban_box.maska_text .light .textbanner2, .matban_box.slider_banner .light .textbanner2 { color:#FFF;}
+
+.matban_box .light .moreinfo{ border-bottom:1px dotted #fff; }
+.matban_box .dark .moreinfo, .matban_box.beforetext .moreinfo{ border-bottom:1px dotted #333; }	 
+	 
+.matban_box.beforetext .stylebanner > .ramka_box,
+.matban_box.beforetext .threeheading{background-color:#fff;}
+
+.reload_captcha{background:url(../image/reload.png) no-repeat;}	 
+.jcarousel-skin-opencart .jcarousel-container { background-color:rgba(0,0,0,0.03);}	

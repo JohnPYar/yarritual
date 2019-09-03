@@ -1,0 +1,290 @@
+<!-- Created using vQmod XML Generator by UKSB - http://www.opencart-extensions.co.uk //-->
+<modification>
+	<id><![CDATA[yandex_maps_vqmod]]></id>
+	<version><![CDATA[1.0]]></version>
+	<vqmver><![CDATA[All]]></vqmver>
+	<author><![CDATA[web-tomsk.ru | lays]]></author>
+	<file name="catalog/view/theme/*/template/information/contact.tpl">
+		<operation>
+			<search position="before" error="log"><![CDATA[<h2><?php echo $text_contact; ?></h2>]]></search>
+			<add><![CDATA[   <?php if ($config_adress_ymaps) { ?>  <h2>Схема проезда</h2>
+    <div class="content">
+                
+<script src="http://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+<script type="text/javascript">
+var myMap;
+
+ymaps.ready(init);
+
+function init()
+
+{
+
+    ymaps.geocode('<?php echo $config_adress_ymaps; ?>', {
+        results: 1
+    }).then
+
+    (
+
+        function (res) 
+        {
+
+            var firstGeoObject = res.geoObjects.get(0),        
+
+                myMap = new ymaps.Map 
+
+                ("map",
+
+                    {
+
+                        center: firstGeoObject.geometry.getCoordinates(),
+
+                        zoom: <?php if ($config_center_maps_zoom) { ?><?php echo $config_center_maps_zoom; ?><?php } else { ?>15<?php } ?>
+
+                    }
+
+                );
+
+            var myPlacemark = new ymaps.Placemark 
+
+            (
+
+                firstGeoObject.geometry.getCoordinates(),
+
+                {
+
+                   <?php if ($config_center_maps_uk_text) { ?> iconContent: '<?php echo $config_center_maps_uk_text; ?>', <?php } ?>
+                   <?php if ($config_center_begun_ymaps) { ?> balloonContent: '<?php echo $config_center_begun_ymaps; ?>',<?php } ?>
+                   <?php if ($config_center_textv_ymaps) { ?> hintContent: '<?php echo $config_center_textv_ymaps; ?>'<?php } ?>
+
+                },
+
+                {
+
+                    preset: 'twirl#<?php if ($config_color_uk_ymaps) { ?><?php echo $config_color_uk_ymaps; ?><?php } else { ?>blue<?php } ?>StretchyIcon' 
+
+                }
+
+            );
+
+            myMap.geoObjects
+
+            .add(myPlacemark);
+
+
+
+            myMap.controls
+
+            .add('<?php echo $config_center_maps_zoomcontrol; ?>', {
+                <?php if ($config_center_maps_zoomcontrolpoz == 't-l') { ?>left: <?php if ($config_center_zoomcontrolot2) { ?><?php echo $config_center_zoomcontrolot2; ?><?php } else { ?>5<?php } ?>,top: <?php if ($config_center_zoomcontrolot1) { ?><?php echo $config_center_zoomcontrolot1; ?><?php } else { ?>5<?php } ?><?php } ?>
+                <?php if ($config_center_maps_zoomcontrolpoz == 't-r') { ?>right: <?php if ($config_center_zoomcontrolot2) { ?><?php echo $config_center_zoomcontrolot2; ?><?php } else { ?>5<?php } ?>,top: <?php if ($config_center_zoomcontrolot1) { ?><?php echo $config_center_zoomcontrolot1; ?><?php } else { ?>5<?php } ?><?php } ?>
+                <?php if ($config_center_maps_zoomcontrolpoz == 'b-l') { ?>left: <?php if ($config_center_zoomcontrolot2) { ?><?php echo $config_center_zoomcontrolot2; ?><?php } else { ?>5<?php } ?>,bottom: <?php if ($config_center_zoomcontrolot1) { ?><?php echo $config_center_zoomcontrolot1; ?><?php } else { ?>5<?php } ?><?php } ?>
+                <?php if ($config_center_maps_zoomcontrolpoz == 'b-r') { ?>right: <?php if ($config_center_zoomcontrolot2) { ?><?php echo $config_center_zoomcontrolot2; ?><?php } else { ?>5<?php } ?>,bottom: <?php if ($config_center_zoomcontrolot1) { ?><?php echo $config_center_zoomcontrolot1; ?><?php } else { ?>5<?php } ?><?php } ?>
+            })   
+
+            .add('typeSelector'); 
+
+        },
+
+        function (err)
+
+        {
+
+            alert(err.message); 
+
+        }
+
+    );
+
+
+
+}
+
+</script>
+<div id="map" style="width:<?php echo $config_center_maps_width; ?>px; height:<?php echo $config_center_maps_hight; ?>px"></div>
+
+    </div><?php } ?>]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/information/contact.php">
+		<operation>
+			<search position="after" error="log"><![CDATA[$this->data['entry_captcha'] = $this->language->get('entry_captcha');]]></search>
+			<add><![CDATA[
+		$this->data['config_adress_ymaps'] = $this->config->get('config_adress_ymaps');
+    	$this->data['config_color_uk_ymaps'] = $this->config->get('config_color_uk_ymaps');
+    	$this->data['config_center_begun_ymaps'] = $this->config->get('config_center_begun_ymaps');
+    	$this->data['config_center_textv_ymaps'] = $this->config->get('config_center_textv_ymaps');
+    	$this->data['config_center_maps_uk_text'] = $this->config->get('config_center_maps_uk_text');
+    	$this->data['config_center_zoomcontrolot1'] = $this->config->get('config_center_zoomcontrolot1');
+    	$this->data['config_center_zoomcontrolot2'] = $this->config->get('config_center_zoomcontrolot2');
+    	$this->data['config_center_maps_zoom'] = $this->config->get('config_center_maps_zoom');
+    	$this->data['config_center_maps_zoomcontrol'] = $this->config->get('config_center_maps_zoomcontrol');
+    	$this->data['config_center_maps_zoomcontrolpoz'] = $this->config->get('config_center_maps_zoomcontrolpoz');
+    	$this->data['config_center_maps_width'] = $this->config->get('config_center_maps_width');
+    	$this->data['config_center_maps_hight'] = $this->config->get('config_center_maps_hight');
+		]]></add>
+		</operation>
+	</file>
+	<file name="admin/controller/setting/setting.php">
+		<operation>
+			<search position="before" error="log"><![CDATA[if (isset($this->request->post['config_address'])) {]]></search>
+			<add><![CDATA[		if (isset($this->request->post['config_adress_ymaps'])) {
+			$this->data['config_adress_ymaps'] = $this->request->post['config_adress_ymaps'];
+		} else {
+			$this->data['config_adress_ymaps'] = $this->config->get('config_adress_ymaps');
+		}
+		
+		if (isset($this->request->post['config_color_uk_ymaps'])) {
+			$this->data['config_color_uk_ymaps'] = $this->request->post['config_color_uk_ymaps'];
+		} else {
+			$this->data['config_color_uk_ymaps'] = $this->config->get('config_color_uk_ymaps');
+		}
+		
+		if (isset($this->request->post['config_center_begun_ymaps'])) {
+			$this->data['config_center_begun_ymaps'] = $this->request->post['config_center_begun_ymaps'];
+		} else {
+			$this->data['config_center_begun_ymaps'] = $this->config->get('config_center_begun_ymaps');
+		}
+		
+		if (isset($this->request->post['config_center_textv_ymaps'])) {
+			$this->data['config_center_textv_ymaps'] = $this->request->post['config_center_textv_ymaps'];
+		} else {
+			$this->data['config_center_textv_ymaps'] = $this->config->get('config_center_textv_ymaps');
+		}
+		
+		if (isset($this->request->post['config_center_maps_uk_text'])) {
+			$this->data['config_center_maps_uk_text'] = $this->request->post['config_center_maps_uk_text'];
+		} else {
+			$this->data['config_center_maps_uk_text'] = $this->config->get('config_center_maps_uk_text');
+		}
+		if (isset($this->request->post['config_center_zoomcontrolot1'])) {
+			$this->data['config_center_zoomcontrolot1'] = $this->request->post['config_center_zoomcontrolot1'];
+		} else {
+			$this->data['config_center_zoomcontrolot1'] = $this->config->get('config_center_zoomcontrolot1');
+		}
+		if (isset($this->request->post['config_center_zoomcontrolot2'])) {
+			$this->data['config_center_zoomcontrolot2'] = $this->request->post['config_center_zoomcontrolot2'];
+		} else {
+			$this->data['config_center_zoomcontrolot2'] = $this->config->get('config_center_zoomcontrolot2');
+		}
+		
+		if (isset($this->request->post['config_center_maps_zoom'])) {
+			$this->data['config_center_maps_zoom'] = $this->request->post['config_center_maps_zoom'];
+		} else {
+			$this->data['config_center_maps_zoom'] = $this->config->get('config_center_maps_zoom');
+		}
+		if (isset($this->request->post['config_center_maps_zoomcontrol'])) {
+			$this->data['config_center_maps_zoomcontrol'] = $this->request->post['config_center_maps_zoomcontrol'];
+		} else {
+			$this->data['config_center_maps_zoomcontrol'] = $this->config->get('config_center_maps_zoomcontrol');
+		}
+		if (isset($this->request->post['config_center_maps_zoomcontrolpoz'])) {
+			$this->data['config_center_maps_zoomcontrolpoz'] = $this->request->post['config_center_maps_zoomcontrolpoz'];
+		} else {
+			$this->data['config_center_maps_zoomcontrolpoz'] = $this->config->get('config_center_maps_zoomcontrolpoz');
+		}
+		if (isset($this->request->post['config_center_maps_hight'])) {
+			$this->data['config_center_maps_hight'] = $this->request->post['config_center_maps_hight'];
+		} else {
+			$this->data['config_center_maps_hight'] = $this->config->get('config_center_maps_hight');
+		}
+		if (isset($this->request->post['config_center_maps_width'])) {
+			$this->data['config_center_maps_width'] = $this->request->post['config_center_maps_width'];
+		} else {
+			$this->data['config_center_maps_width'] = $this->config->get('config_center_maps_width');
+		}
+		]]></add>
+		</operation>
+	</file>
+	<file name="admin/view/template/setting/setting.tpl">
+		<operation>
+			<search position="after" error="log"><![CDATA[<td><input type="text" name="config_fax" value="<?php echo $config_fax; ?>" /></td>]]></search>
+			<add><![CDATA[ </tr>
+          </table>
+        <div id="tab-maps">
+          <table class="form">
+            <h2>Настройки Яндекс Карты</h2>
+            <p><b>Настройки города</b></p>
+            <tr>
+              <td>Адрес: </td><td style="width: 160px;"><input type="text" name="config_adress_ymaps" value="<?php echo $config_adress_ymaps; ?>" /></td><td><em>Например: Россия, Томск, проспект Мира, 25</em></td>
+            </tr>
+          </table>
+          <table class="form">
+            <p><b>Размеры карты</b></p>
+            <tr>
+              <td>Ширина: </td><td style="width: 160px;"><input type="text" name="config_center_maps_width" value="<?php echo $config_center_maps_width; ?>" /> px</td><td></td>
+            </tr>
+            <tr>
+              <td>Высота: </td><td style="width: 160px;"><input type="text" name="config_center_maps_hight" value="<?php echo $config_center_maps_hight; ?>" /> px</td><td></td>
+            </tr>
+          </table>
+          <table class="form">  
+            <p><b>Другое</b></p>
+            <tr>
+              <td>Уровень зуммирование: </td><td style="width: 160px;">
+              	<select  style="width: 160px;" name="config_center_maps_zoom" size="1">
+				<option <?php if ($config_center_maps_zoom == '1') { ?>selected="selected"<?php } ?> value="1">1</option>
+				<option <?php if ($config_center_maps_zoom == '2') { ?>selected="selected"<?php } ?> value="2">2(мир)</option>
+				<option <?php if ($config_center_maps_zoom == '3') { ?>selected="selected"<?php } ?> value="3">3</option>
+				<option <?php if ($config_center_maps_zoom == '4') { ?>selected="selected"<?php } ?> value="4">4</option>
+				<option <?php if ($config_center_maps_zoom == '5') { ?>selected="selected"<?php } ?> value="5">5(страна)</option>
+				<option <?php if ($config_center_maps_zoom == '6') { ?>selected="selected"<?php } ?> value="6">6</option>
+				<option <?php if ($config_center_maps_zoom == '7') { ?>selected="selected"<?php } ?> value="7">7</option>
+				<option <?php if ($config_center_maps_zoom == '8') { ?>selected="selected"<?php } ?> value="8">8</option>
+				<option <?php if ($config_center_maps_zoom == '9') { ?>selected="selected"<?php } ?> value="9">9(город)</option>
+				<option <?php if ($config_center_maps_zoom == '10') { ?>selected="selected"<?php } ?> value="10">10</option>
+				<option <?php if ($config_center_maps_zoom == '11') { ?>selected="selected"<?php } ?> value="11">11</option>
+				<option <?php if ($config_center_maps_zoom == '12') { ?>selected="selected"<?php } ?> value="12">12</option>
+				<option <?php if ($config_center_maps_zoom == '13') { ?>selected="selected"<?php } ?> value="13">13(улица)</option>
+				<option <?php if ($config_center_maps_zoom == '14') { ?>selected="selected"<?php } ?> value="14">14</option>
+				<option <?php if ($config_center_maps_zoom == '15') { ?>selected="selected"<?php } ?> value="15">15</option>
+				<option <?php if ($config_center_maps_zoom == '16') { ?>selected="selected"<?php } ?> value="16">16(дом)</option>
+				<option <?php if ($config_center_maps_zoom == '17') { ?>selected="selected"<?php } ?> value="17">17</option>
+				</select>
+			</td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>ZoomControl: </td><td style="width: 160px;">Вид: 
+              	<select  style="width: 160px;" name="config_center_maps_zoomcontrol" size="1">
+				<option <?php if ($config_center_maps_zoomcontrol == 'zoomControl') { ?>selected="selected"<?php } ?> value="zoomControl">Стандартный</option>
+				<option <?php if ($config_center_maps_zoomcontrol == 'smallZoomControl') { ?>selected="selected"<?php } ?> value="smallZoomControl">Уменьшенный</option>
+				</select>
+          	  </td>
+          	  <td style="width: 160px;">Позиция: 
+              	<select  style="width: 160px;" name="config_center_maps_zoomcontrolpoz" size="1" onchange="id_2.innerHTML = selectedOptions[0].getAttribute('data-text') || 'не выбрано расположение'">
+				<option <?php if ($config_center_maps_zoomcontrolpoz == 't-l') { ?>selected="selected"<?php } ?> data-text="Отступ от верха и от левого края в пикселях" value="t-l">Верх-Лево</option>
+				<option <?php if ($config_center_maps_zoomcontrolpoz == 't-r') { ?>selected="selected"<?php } ?> data-text="Отступ от верха и от правого края в пикселях" value="t-r">Верх-Право</option>
+				<option <?php if ($config_center_maps_zoomcontrolpoz == 'b-l') { ?>selected="selected"<?php } ?> data-text="Отступ от низа и от левого края в пикселях" value="b-l">Низ-Лево</option>
+				<option <?php if ($config_center_maps_zoomcontrolpoz == 'b-r') { ?>selected="selected"<?php } ?> data-text="Отступ от низа и от правого края в пикселях" value="b-r">Низ-Право</option>
+				</select>
+          	  </td>
+          	  <td><div id="id_2">Отступы</div>
+	          	  <input type="text" name="config_center_zoomcontrolot1" value="<?php echo $config_center_zoomcontrolot1; ?>" style="width: 50px;" />px 
+	          	  <input type="text" name="config_center_zoomcontrolot2" value="<?php echo $config_center_zoomcontrolot2; ?>" style="width: 50px;" />px</td>
+          	  <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Текст на указателе: </td><td style="width: 160px;"><input type="text" name="config_center_maps_uk_text" value="<?php echo $config_center_maps_uk_text; ?>" /></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Текст бегуна: </td><td style="width: 160px;"><input type="text" name="config_center_begun_ymaps" value="<?php echo $config_center_begun_ymaps; ?>" /></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Текст всплывающей подсказки указателя: </td><td style="width: 160px;"><input type="text" name="config_center_textv_ymaps" value="<?php echo $config_center_textv_ymaps; ?>" /></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>Цвет указателя: </td><td style="width: 160px;">
+				<select name="config_color_uk_ymaps" size="1">
+				<option <?php if ($config_color_uk_ymaps == 'blue') { ?>selected="selected"<?php } ?> value="blue">Синий(По умолчанию)</option>
+				<option <?php if ($config_color_uk_ymaps == 'green') { ?>selected="selected"<?php } ?>value="green">Зеленый</option>
+				<option <?php if ($config_color_uk_ymaps == 'red') { ?>selected="selected"<?php } ?>value="red">Красный</option>
+				<option <?php if ($config_color_uk_ymaps == 'black') { ?>selected="selected"<?php } ?>value="black">Черный</option>
+				<option <?php if ($config_color_uk_ymaps == 'yellow') { ?>selected="selected"<?php } ?>value="yellow">Желтый</option>
+				<option <?php if ($config_color_uk_ymaps == 'pink') { ?>selected="selected"<?php } ?>value="pink">Розовый</option>
+				</select></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+          </table>
+        </div>]]></add>
+		</operation>
+	</file>
+</modification>

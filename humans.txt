@@ -1,0 +1,26 @@
+/* TEAM */
+
+                            
+Your title: Anton Barinov.
+
+                            
+Site: http://web-tomsk.ru/
+
+                            
+Twitter: @WebTomsk
+
+                            
+Location: Tomsk, Russia.
+
+
+                            
+/* SITE */
+
+                            
+Last update: 2013/15/02 
+
+                            
+Standards: HTML5, CSS3.
+
+                            
+Components: Modernizr, jQuery, etc.
