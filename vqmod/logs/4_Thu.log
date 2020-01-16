@@ -1,4 +1,4 @@
----------- Date: 2019-08-22 15:00:40 ~ IP : ::1 ----------
+---------- Date: 2020-01-09 13:52:53 ~ IP : ::1 ----------
 REQUEST URI : /
 MOD DETAILS:
    modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
@@ -13,7 +13,7 @@ VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascrip
 ----------------------------------------------------------------------
 
 
----------- Date: 2019-08-22 15:01:27 ~ IP : ::1 ----------
+---------- Date: 2020-01-09 13:53:34 ~ IP : ::1 ----------
 REQUEST URI : /
 MOD DETAILS:
    modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
@@ -28,7 +28,7 @@ VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascrip
 ----------------------------------------------------------------------
 
 
----------- Date: 2019-08-22 15:40:44 ~ IP : ::1 ----------
+---------- Date: 2020-01-09 13:54:22 ~ IP : ::1 ----------
 REQUEST URI : /
 MOD DETAILS:
    modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
@@ -43,7 +43,7 @@ VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascrip
 ----------------------------------------------------------------------
 
 
----------- Date: 2019-08-22 15:40:52 ~ IP : ::1 ----------
+---------- Date: 2020-01-09 13:58:05 ~ IP : ::1 ----------
 REQUEST URI : /
 MOD DETAILS:
    modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
@@ -58,7 +58,292 @@ VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascrip
 ----------------------------------------------------------------------
 
 
----------- Date: 2019-08-22 15:41:03 ~ IP : ::1 ----------
+---------- Date: 2020-01-09 13:58:44 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 13:58:56 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 14:12:29 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 14:13:03 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 14:16:40 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 14:17:03 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 14:17:06 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 14:17:59 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:25:28 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:25:31 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:26:07 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:26:29 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:26:33 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:35:07 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:37:46 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:39:59 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:40:02 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:40:09 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:41:57 ~ IP : ::1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
+   id        : JV_QuickOrder (Opencart 1.5.2.x_1.5.3.x_1.5.4.x___OcStore 1.5.2.x_1.5.3.x_1.5.4.x)
+   version   : 1.1
+   vqmver    : 2.1.6
+   author    : JohnnyVega
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-01-09 15:43:02 ~ IP : ::1 ----------
 REQUEST URI : /
 MOD DETAILS:
    modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml

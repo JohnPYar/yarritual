@@ -4,10 +4,8 @@ class ModelSettingStore extends Model {
 		$this->db->query("INSERT INTO " . DB_PREFIX . "store SET name = '" . $this->db->escape($data['config_name']) . "', `url` = '" . $this->db->escape($data['config_url']) . "', `ssl` = '" . $this->db->escape($data['config_ssl']) . "'");
 		
 		$this->cache->delete('store');
-		$this->cache->delete('seo_pro');
 
         
-		$this->cache->delete('seo_pro');
 		$this->cache->delete('seo_pro');
         
       
@@ -19,10 +17,8 @@ class ModelSettingStore extends Model {
 		$this->db->query("UPDATE " . DB_PREFIX . "store SET name = '" . $this->db->escape($data['config_name']) . "', `url` = '" . $this->db->escape($data['config_url']) . "', `ssl` = '" . $this->db->escape($data['config_ssl']) . "' WHERE store_id = '" . (int)$store_id . "'");
 						
 		$this->cache->delete('store');
-		$this->cache->delete('seo_pro');
 
         
-		$this->cache->delete('seo_pro');
 		$this->cache->delete('seo_pro');
         
       
@@ -32,10 +28,8 @@ class ModelSettingStore extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "store WHERE store_id = '" . (int)$store_id . "'");
 			
 		$this->cache->delete('store');
-		$this->cache->delete('seo_pro');
 
         
-		$this->cache->delete('seo_pro');
 		$this->cache->delete('seo_pro');
         
       
