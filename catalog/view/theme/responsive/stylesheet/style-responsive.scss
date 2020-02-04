@@ -266,6 +266,10 @@ body {
   display: flex;
   //align-content: space-between;
   justify-content: space-between;
+
+  @media (max-width: $screen-mobile-l) {
+    justify-content: center;
+  }
 }
 
 .head__left {
@@ -283,6 +287,10 @@ body {
 
 
   }
+
+  @media (max-width: $screen-mobile-l) {
+    display: none;
+  }
 }
 
 .head__right {
@@ -293,6 +301,10 @@ body {
   margin-top: 63px - 10px;
   //padding-right: 63px;
   flex: 1;
+
+  @media (max-width: $screen-mobile-l) {
+    display: none;
+  }
 }
 
 .head__logo {
@@ -300,9 +312,20 @@ body {
   //margin: 0 auto;
   //max-width: 33%;
 
+  @media (max-width: $screen-mobile-l) {
+    position: relative;
+    top: 5px;
+
+  }
+
   .logo {
     position: relative;
     top: 5px;
+
+    @media (max-width: $screen-mobile-l) {
+      width: 100px;
+      top: 0;
+    }
   }
 }
 
@@ -360,6 +383,7 @@ body {
   display: block;
 
   >img {
+    width: 100%;
     //position: absolute;
   }
 }
@@ -367,6 +391,10 @@ body {
 .headmenu {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $screen-mobile-l) {
+    display: none;
+  }
 
 
   ul {
@@ -381,6 +409,9 @@ body {
       list-style: none;
       margin-right: 53px;
         ///* padding: 11px 12px; */
+      @media (max-width:$screen-laptop) {
+        margin-right: 0;
+      }
 
       &:hover {
         color: #05376c;

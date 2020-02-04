@@ -170,35 +170,60 @@ body {
           font-size: 18px;
           color: #E4E4E4;
           text-shadow: 1px 1px 3px #000; }
+        @media (max-width: 768px) {
+          #global .header .head .company-name {
+            text-align: center; } }
 
 .head__top {
   display: flex;
   justify-content: space-between; }
+  @media (max-width: 425px) {
+    .head__top {
+      justify-content: center; } }
 
 .head__left {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  min-width: 40%;
-  max-width: 40%;
-  margin-top: 39px; }
+  margin-top: 39px;
+  flex: 1; }
+  @media (max-width: 768px) {
+    .head__left {
+      margin-top: 20px;
+      padding-left: 20px; } }
+  @media (max-width: 425px) {
+    .head__left {
+      display: none; } }
 
 .head__right {
-  min-width: 40%;
-  max-width: 40%;
   display: flex;
   justify-content: flex-end;
-  margin-top: 53px; }
+  margin-top: 53px;
+  flex: 1; }
+  @media (max-width: 425px) {
+    .head__right {
+      display: none; } }
 
+@media (max-width: 425px) {
+  .head__logo {
+    position: relative;
+    top: 5px; } }
 .head__logo .logo {
   position: relative;
   top: 5px; }
+  @media (max-width: 425px) {
+    .head__logo .logo {
+      width: 100px;
+      top: 0; } }
 
 #global .header .head span {
   font-size: 14px;
   color: #79abd0;
   position: relative;
   font-weight: bold; }
+  @media (max-width: 1024px) {
+    #global .header .head span {
+      font-size: 12px; } }
 
 #global .header .head .adress {
   margin-top: 19px; }
@@ -212,10 +237,15 @@ body {
 .logoheaderurl {
   position: relative;
   display: block; }
+  .logoheaderurl > img {
+    width: 100%; }
 
 .headmenu {
   display: flex;
   justify-content: space-between; }
+  @media (max-width: 425px) {
+    .headmenu {
+      display: none; } }
   .headmenu ul {
     position: relative;
     display: inline-block; }
@@ -223,6 +253,9 @@ body {
       float: left;
       list-style: none;
       margin-right: 53px; }
+      @media (max-width: 1024px) {
+        .headmenu ul li {
+          margin-right: 0; } }
       .headmenu ul li:hover {
         color: #05376c; }
 
