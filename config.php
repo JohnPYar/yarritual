@@ -1,24 +1,24 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost:8888/');
-define('HTTP_IMAGE', 'http://localhost:8888/image/');
-define('HTTP_ADMIN', 'http://localhost:8888/admin/');
+define('HTTP_SERVER', 'http://yarritual/');
+define('HTTP_IMAGE', 'http://yarritual/image/');
+define('HTTP_ADMIN', 'http://yarritual/admin/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost:8888/');
-define('HTTPS_IMAGE', 'http://localhost:8888/image/');
+define('HTTPS_SERVER', 'http://yarritual/');
+define('HTTPS_IMAGE', 'http://yarritual/image/');
 
 // DIR
-define('DIR_APPLICATION', '/Applications/MAMP/htdocs/catalog/');
-define('DIR_SYSTEM', '/Applications/MAMP/htdocs/system/');
-define('DIR_DATABASE', '/Applications/MAMP/htdocs/system/database/');
-define('DIR_LANGUAGE', '/Applications/MAMP/htdocs/catalog/language/');
-define('DIR_TEMPLATE', '/Applications/MAMP/htdocs/catalog/view/theme/');
-define('DIR_CONFIG', '/Applications/MAMP/htdocs/system/config/');
-define('DIR_IMAGE', '/Applications/MAMP/htdocs/image/');
-define('DIR_CACHE', '/Applications/MAMP/htdocs/system/cache/');
-define('DIR_DOWNLOAD', '/Applications/MAMP/htdocs/download/');
-define('DIR_LOGS', '/Applications/MAMP/htdocs/system/logs/');
+define('DIR_APPLICATION', 'C:\OSPanel\domains\yarritual/catalog/');
+define('DIR_SYSTEM', 'C:\OSPanel\domains\yarritual/system/');
+define('DIR_DATABASE', 'C:\OSPanel\domains\yarritual/system/database/');
+define('DIR_LANGUAGE', 'C:\OSPanel\domains\yarritual/catalog/language/');
+define('DIR_TEMPLATE', 'C:\OSPanel\domains\yarritual/catalog/view/theme/');
+define('DIR_CONFIG', 'C:\OSPanel\domains\yarritual/system/config/');
+define('DIR_IMAGE', 'C:\OSPanel\domains\yarritual/image/');
+define('DIR_CACHE', 'C:\OSPanel\domains\yarritual/system/cache/');
+define('DIR_DOWNLOAD', 'C:\OSPanel\domains\yarritual/download/');
+define('DIR_LOGS', 'C:\OSPanel\domains\yarritual/system/logs/');
 
 // DB
 define('DB_DRIVER', 'mysql');
