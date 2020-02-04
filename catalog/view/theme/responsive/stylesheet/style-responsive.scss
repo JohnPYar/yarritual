@@ -252,6 +252,10 @@ body {
 
 
         }
+
+        @media (max-width: $screen-tablet) {
+          text-align: center;
+        }
       }
 
 
@@ -268,18 +272,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  min-width: 40%;
-  max-width: 40%;
+  //min-width: 40%;
+  //max-width: 40%;
   margin-top: 66px - 27px;
+  flex: 1;
+
+  @media (max-width: $screen-tablet) {
+    margin-top: 20px;
+    padding-left: 20px;
+
+
+  }
 }
 
 .head__right {
-  min-width: 40%;
-  max-width: 40%;
+  //min-width: 40%;
+  //max-width: 40%;
   display: flex;
   justify-content: flex-end;
   margin-top: 63px - 10px;
   //padding-right: 63px;
+  flex: 1;
 }
 
 .head__logo {
@@ -306,6 +319,10 @@ body {
   position: relative;
   //top: 66px;
   font-weight: bold;
+
+  @media (max-width: $screen-laptop){
+    font-size: 12px;
+  }
 }
 
 #global .header .head .adress {
