@@ -206,8 +206,7 @@ body {
 
 @media (max-width: 425px) {
   .head__logo {
-    position: relative;
-    top: 5px; } }
+    align-self: center; } }
 .head__logo .logo {
   position: relative;
   top: 5px; }
