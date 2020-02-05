@@ -1,4 +1,4 @@
----------- Date: 2019-08-16 16:02:33 ~ IP : ::1 ----------
+---------- Date: 2020-01-10 11:11:20 ~ IP : ::1 ----------
 REQUEST URI : /
 MOD DETAILS:
    modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml
@@ -13,7 +13,7 @@ VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <script type="text/javascrip
 ----------------------------------------------------------------------
 
 
----------- Date: 2019-08-16 16:12:10 ~ IP : ::1 ----------
+---------- Date: 2020-01-10 15:23:08 ~ IP : ::1 ----------
 REQUEST URI : /
 MOD DETAILS:
    modFile   : /Applications/MAMP/htdocs/vqmod/xml/jv_quickorder_os1521_os1531_oc1541.xml

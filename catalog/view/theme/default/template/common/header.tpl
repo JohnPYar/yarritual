@@ -2,7 +2,11 @@
 <html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>">
 <head>
 	<meta charset="UTF-8"/>
-	<meta name="viewport" content="maximum-scale=1, user-scalable=yes, width=1100">
+
+	<!--	<meta name="viewport" content="maximum-scale=1, user-scalable=yes, width=1100">-->
+<!--	была эта строчка не давала работать адаптиву -->
+
+	<meta name="viewport" content="maximum-scale=1, user-scalable=yes, width=device-width">
 	<title><?php echo $title; ?></title>
 	<base href="<?php echo $base; ?>"/>
     <?php if ($description) { ?>
@@ -18,8 +22,9 @@
     <?php foreach ($links as $link) { ?>
 		 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>"/>
     <?php } ?>
+
 	<!-- responsive style file -->
-	<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/style-responsive.css"/>
+	<link rel="stylesheet" type="text/css" href="catalog/view/theme/responsive/stylesheet/style-responsive.css"/>
     <?php foreach ($styles as $style) { ?>
 		 <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>"
 				 media="<?php echo $style['media']; ?>"/>
@@ -114,7 +119,8 @@
 					  г. Ярославль, ул. Чкалова, 4 А (Траурный зал)</span>
 			  </span>
 				<a href="/" title="Перейти на главную" class="logoheaderurl">
-					<img src="http://localhost:8888/catalog/view/theme/default/image/logo_new.png" style="position: absolute;">
+					<img src="http://localhost:8888/catalog/view/theme/default/image/logo_new.png"
+						  style="position: absolute;">
 				</a>
 				<style type="text/css">
 					.logoheaderurl {
@@ -172,5 +178,4 @@
 		<div id="notification"></div>
 
 
-
- 
+</html>
