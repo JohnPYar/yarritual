@@ -1,6 +1,4 @@
 
-<!-- вместо slideshow.tpl почему то слайдер сделан через blog.tpl-->
-
   <div class="slider" style="width: 1088px;margin: 0 auto;height: 475px;padding-left: 0px;">  
         <section class="first">
 		 <div class="slides-wrapper">
@@ -19,8 +17,8 @@
 		 <div class="clear-both"></div>
 		 <div class="next-slide">Вперед</div>
 		 <div class="prev-slide">Назад</div>
-        </section>
-  </div>
+        </section>  
+    </div>
 	<script type="text/javascript" src="../catalog/view/javascript/custom.slider.js"></script>
 	<script type="text/javascript">
 		createSlider('.slider', {prev: '.prev-slide', next: '.next-slide', duration: 300, auto: 5000});

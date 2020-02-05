@@ -1,0 +1,75 @@
+.feedback_box input, .feedback_box textarea {
+	font-family:Arial, Helvetica, sans-serif;
+}
+.sidebar_feedback{ 
+   padding:10px;
+   border:1px solid #e4e4e4;
+   }
+.feedback_box .warning {
+	position: absolute;
+	left: 0px;
+	width: 145px;
+	top: 15%;
+	z-index: 2;
+	margin: 0 0 0 145px;
+	cursor: pointer;
+}
+.feedback_box .success{ background-color:transparent; border: none;padding: 0px 0px 0px 33px;}
+.feedback_box .entry_captcha {
+	padding: 0px 0 6px;
+}
+.feedback_box, .feedback_box form > div {
+	position: relative;
+}
+.feedback_box form > div{}
+.captcha_feed_image_div {
+	width: 77px; float: left;
+}
+.captcha_feed_image_div img {
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+.feedback_box input.captcha_feed,
+#column-left .feedback_box input.captcha_feed,
+#column-right .feedback_box input.captcha_feed {
+	width: 80px;
+	float: left;
+	margin: 0 5px 0 0;
+	padding:6px;
+}
+.reload_captcha{ 
+display:block;
+float: left;
+width:20px;
+height:29px;
+}
+
+.feedback_box a.button{ text-align:center; display:block; width:110px; float:right; }
+#column-left .feedback_box a.button, #column-right .feedback_box a.button{width:230px; float:none; margin-right:0;  }
+
+#column-left .feedback_box input, #column-right .feedback_box input{width: 206px; max-width: 206px; padding-left:34px;}
+#column-left .feedback_box textarea, #column-right .feedback_box textarea {width: 234px; max-width: 234px;}
+#column-left .feedback_box form > div, #column-right .feedback_box form > div{ width: 100%;}
+#column-left .field_captcha, #column-right .field_captcha{ width:100%;}
+
+.feedback_box input{ width:89%;padding-left:34px;}
+.feedback_box textarea{ width:98.5%; max-width:98.5%;}
+.feedback_box form > div{ display:inline-block; vertical-align:top; text-align:left;}
+.field_feed1{ width:33%; display:inline-block; vertical-align:top;}
+.field_feed2{ width:100%;}
+.feedback_box form > .field_feed3{ display:block;}
+.field_captcha{ margin-bottom:10px; display:inline-block; vertical-align:top;}
+
+.field_feed1 > div { 
+    position:absolute;
+	top:5px;
+	left:1px;
+	width:29px; 
+	height:27px;
+	z-index:3;
+	background-color:#eee;
+	background-repeat:no-repeat;
+	background-position:center center;}
+.field_feed1.field_name > div{ background-image:url(../image/feed_user.png);}
+.field_feed1.field_phone > div{ background-image:url(../image/feed_phone.png);}
+.field_feed1.field_email > div{ background-image:url(../image/feed_mail.png);}

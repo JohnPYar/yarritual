@@ -49,9 +49,8 @@ li {
 	clear: both;
 }
 
-.slider {
-	max-width: 1088px;
-	background-color: #1DC116;
+.slider{
+	
 }
 .slider .slides-wrapper {
 	overflow: hidden;
