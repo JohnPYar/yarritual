@@ -218,6 +218,10 @@ body {
     position: relative;
     z-index: 9999;
 
+    @media (max-width: $screen-mobile-l) {
+      height: 100px;
+    }
+
     //@media (max-width: $screen-tablet) {
     //  padding-right: 20px;
     //  padding-left: 20px;
@@ -232,9 +236,9 @@ body {
       //margin: 0 auto;
       width: 100%;
 
-      //display: flex;
-      //
-      //justify-content: space-between;
+      @media (max-width: $screen-mobile-l) {
+        height: 137px;
+      }
 
 
       .company-name {
@@ -268,7 +272,7 @@ body {
   justify-content: space-between;
 
   @media (max-width: $screen-mobile-l) {
-    justify-content: center;
+    justify-content: start;
   }
 }
 
@@ -283,7 +287,7 @@ body {
 
   @media (max-width: $screen-tablet) {
     margin-top: 20px;
-    padding-left: 20px;
+    //padding-left: 20px;
 
 
   }
@@ -316,6 +320,7 @@ body {
     //position: relative;
     //top: 5px;
     align-self: center;
+    padding-left: 15px;
 
   }
 
@@ -324,8 +329,8 @@ body {
     top: 5px;
 
     @media (max-width: $screen-mobile-l) {
-      width: 100px;
-      top: 0;
+      width: 80px;
+      //top: 0;
     }
   }
 }
@@ -487,6 +492,8 @@ body {
     margin: 0 auto;
     max-width: 950px;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
 
     .blockcontentcase {
       background: url('../../default/image/blockprod.png');
