@@ -1,7 +1,7 @@
 
 <!-- вместо slideshow.tpl почему то слайдер сделан через blog.tpl-->
 
-  <div class="slider" style="max-width: 1088px;margin: 0 auto;height: 475px;padding-left: 0px;">
+  <div class="slider">
         <section class="first">
 		 <div class="slides-wrapper">
           <div class="slide-list">

@@ -306,6 +306,7 @@ body {
     max-width: 950px;
     position: relative;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap; }
     .block2 .blockcontent .blockcontentcase {
       background: url("../../default/image/blockprod.png");
