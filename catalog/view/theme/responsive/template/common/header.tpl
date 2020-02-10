@@ -48,7 +48,7 @@
     } ?>
     <?php if ($this->request->get['route'] == 'common/home') { ?>
 
-	 <link rel="stylesheet" href="css/style.css" type="text/css"/>
+	 <link rel="stylesheet" href="../../../../../../css/style_response.css" type="text/css"/>
 		 <script type="text/javascript">
            $(document).ready(function () {
                $('.slidewrap').carousel({
