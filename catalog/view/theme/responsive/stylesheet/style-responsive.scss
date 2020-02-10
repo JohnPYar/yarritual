@@ -478,7 +478,7 @@ body {
 }
 
 .block2 {
-  margin-bottom: 50px;
+  //margin-bottom: 50px;
 
   .blockheader {
     background: url('../../default/image/block2.png');
@@ -508,10 +508,25 @@ body {
       position: relative;
       width: 285px;
       z-index: 9999999;
+
+      @media (max-width: $screen-mobile-l) {
+        margin-left: 0;
+      }
+
+    }
+
+    ul {
+
+      @media (max-width: $screen-mobile-l) {
+        padding-left: 15px;
+      }
     }
   }
 }
 
+.content-1 .blockcontentcase {
+  margin-top: 15px;
+}
 
 .blockcontentcase img.imgcase {
   border-top-left-radius: 4px;
