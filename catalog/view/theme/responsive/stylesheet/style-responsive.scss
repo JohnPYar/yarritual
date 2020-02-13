@@ -295,7 +295,7 @@ body {
   }
 
   @media (max-width: $screen-mobile-l) {
-    display: none;
+    //display: none;
   }
 }
 
@@ -309,7 +309,8 @@ body {
   flex: 1;
 
   @media (max-width: $screen-mobile-l) {
-    display: none;
+    //display: none;
+    margin-top: 0;
   }
 }
 
@@ -323,7 +324,7 @@ body {
     //top: 5px;
     align-self: center;
     padding-left: 15px;
-
+    order: -1;
   }
 
   .logo {
@@ -363,6 +364,11 @@ body {
   //top: 27px - 8px;
   margin-top: 27px - 8px;
   //position: relative;
+  
+  @media (max-width: $screen-mobile-l) {
+    display: none;
+    
+  }
 
   >span {
     color: #e4e4e4;
@@ -378,7 +384,16 @@ body {
   //text-align: end;
   right: 63px;
 
+  @media (max-width: $screen-mobile-l) {
+    right: 0;
+  }
 
+  span {
+
+    @media (max-width: $screen-mobile-l) {
+      font-size: 12px;
+    }
+  }
 }
 
 .logoheaderurl {
