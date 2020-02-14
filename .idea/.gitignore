@@ -4,3 +4,6 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+#files of local servers settings
+config.php
