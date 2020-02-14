@@ -455,6 +455,14 @@ body {
 
   @media (max-width: $screen-mobile-l) {
     display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 300%;
   }
 
 
@@ -501,6 +509,12 @@ body {
 .headmenu .menu1 {
   //left: 85px;
   padding-left: 85px;
+
+  @media(max-width: $screen-mobile-l) {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
 }
 
 .headmenu .menu1 li {
@@ -512,6 +526,12 @@ body {
 .headmenu .menu2 {
   //left: 153px;
   padding-right: 85px;
+
+  @media(max-width: $screen-mobile-l) {
+    display: flex;
+    flex-direction: column;
+    padding-right: 0;
+  }
 }
 
 .headmenu .menu2 li {
