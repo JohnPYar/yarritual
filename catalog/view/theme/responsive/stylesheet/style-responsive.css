@@ -176,6 +176,9 @@ body {
           font-size: 18px;
           color: #E4E4E4;
           text-shadow: 1px 1px 3px #000; }
+          @media (max-width: 425px) {
+            #global .header .head .company-name > span {
+              font-size: 16px; } }
         @media (max-width: 768px) {
           #global .header .head .company-name {
             text-align: center; } }
@@ -219,13 +222,8 @@ body {
       width: 80px; } }
 
 #global .header .head span {
-  font-size: 14px;
-  color: #79abd0;
   position: relative;
   font-weight: bold; }
-  @media (max-width: 1024px) {
-    #global .header .head span {
-      font-size: 12px; } }
 
 #global .header .head .adress {
   margin-top: 19px; }
@@ -235,15 +233,44 @@ body {
   #global .header .head .adress > span {
     color: #e4e4e4;
     text-shadow: 1px 1px 3px #000; }
+    @media (max-width: 768px) {
+      #global .header .head .adress > span {
+        font-size: 12px; } }
 
 #global .header .head .phone {
   right: 63px; }
   @media (max-width: 425px) {
     #global .header .head .phone {
-      right: 0; } }
+      right: 0;
+      text-align: end; } }
+
+.phone-code {
+  color: #E4E4E4;
+  text-shadow: 1px 1px 3px #000;
+  font-size: 16px;
+  margin-right: 18px; }
   @media (max-width: 425px) {
-    #global .header .head .phone span {
+    .phone-code {
       font-size: 12px; } }
+
+.phone-number {
+  color: #E4E4E4;
+  text-shadow: 1px 1px 3px #000;
+  font-size: 37px; }
+  @media (max-width: 425px) {
+    .phone-number {
+      font-size: 16px; } }
+
+.work-time {
+  color: #E4E4E4;
+  text-shadow: 1px 1px 3px #000;
+  font-size: 18px;
+  margin-top: 10px;
+  display: block;
+  margin-top: 5px; }
+  @media (max-width: 425px) {
+    .work-time {
+      font-size: 14px; } }
 
 .logoheaderurl {
   position: relative;

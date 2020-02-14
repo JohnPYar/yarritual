@@ -146,31 +146,31 @@
 										 /*top: -77px;*/
 										 /*left: 283px;*/
 										 /* float: left; */
-									"><span style="
-										 color: #E4E4E4; text-shadow: 1px 1px 3px #000;
+									"><span class="phone-code" style="
+										 /*color: #E4E4E4; text-shadow: 1px 1px 3px #000;*/
 										 /*position: relative;*/
 										 /*left: -41px;*/
 										 /*top: 60px;*/
-										 font-size: 16px;
-										 margin-right: 18px;
+										 /*font-size: 16px;*/
+										 /*margin-right: 18px;*/
 									">(4852)</span>
-										<span style="
-										 color: #E4E4E4; text-shadow: 1px 1px 3px #000;
-										 font-size: 37px;
+										<span class="phone-number" style="
+										 /*color: #E4E4E4; text-shadow: 1px 1px 3px #000;*/
+										 /*font-size: 37px;*/
 										 /*position: relative;*/
 										 /*top: 63px;*/
 										 /*left: -23px;*/
 									">944-449</span>
 								</span>
-								<span style="
-									 color: #E4E4E4; text-shadow: 1px 1px 3px #000;
+								<span class="work-time" style="
+									 /*color: #E4E4E4; text-shadow: 1px 1px 3px #000;*/
 									 /*position: relative;*/
 									 /*top: -10px;*/
 									 /*left: 220px;*/
-									 font-size: 18px;
-									 margin-top: 10px;
-									 display: block;
-									 margin-top: 5px;
+									 /*font-size: 18px;*/
+									 /*margin-top: 10px;*/
+									 /*display: block;*/
+									 /*margin-top: 5px;*/
 									">Работаем круглосуточно</span>
 							</span>
 						</div>

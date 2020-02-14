@@ -256,7 +256,9 @@ body {
           color: #E4E4E4;
           text-shadow: 1px 1px 3px #000;
 
-
+          @media(max-width: $screen-mobile-l) {
+            font-size: 16px;
+          }
         }
 
         @media (max-width: $screen-tablet) {
@@ -346,14 +348,14 @@ body {
 //}
 
 #global .header .head span {
-  font-size: 14px;
-  color: #79abd0;
+  //font-size: 14px;
+  //color: #79abd0;
   position: relative;
   //top: 66px;
   font-weight: bold;
 
   @media (max-width: $screen-laptop){
-    font-size: 12px;
+    //font-size: 12px;
   }
 }
 
@@ -373,6 +375,10 @@ body {
   >span {
     color: #e4e4e4;
     text-shadow: 1px 1px 3px #000;
+
+    @media(max-width: $screen-tablet) {
+      font-size: 12px;
+    }
   }
 
 }
@@ -386,13 +392,45 @@ body {
 
   @media (max-width: $screen-mobile-l) {
     right: 0;
+    text-align: end;
   }
 
   span {
 
     @media (max-width: $screen-mobile-l) {
-      font-size: 12px;
+      //font-size: 12px;
     }
+  }
+}
+
+.phone-code {
+  color: #E4E4E4; text-shadow: 1px 1px 3px #000;
+  font-size: 16px;
+  margin-right: 18px;
+
+  @media (max-width: $screen-mobile-l) {
+    font-size: 12px;
+  }
+}
+
+.phone-number {
+  color: #E4E4E4; text-shadow: 1px 1px 3px #000;
+  font-size: 37px;
+
+  @media(max-width: $screen-mobile-l) {
+    font-size: 16px;
+  }
+}
+
+.work-time {
+  color: #E4E4E4; text-shadow: 1px 1px 3px #000;
+  font-size: 18px;
+  margin-top: 10px;
+  display: block;
+  margin-top: 5px;
+
+  @media(max-width: $screen-mobile-l) {
+    font-size: 14px;
   }
 }
 
