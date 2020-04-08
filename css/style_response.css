@@ -49,6 +49,9 @@ li {
   margin: 0 auto;
   height: 475px;
   padding-left: 0px; }
+  @media (max-width: 425px) {
+    .slider {
+      display: none; } }
 
 .slider .slides-wrapper {
   overflow: hidden; }

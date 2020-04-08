@@ -72,7 +72,12 @@ li {
   margin: 0 auto;
   height: 475px;
   padding-left: 0px;
+
+  @media(max-width: $screen-mobile-l) {
+    display: none;
+  }
 }
+
 .slider .slides-wrapper {
   overflow: hidden;
 }

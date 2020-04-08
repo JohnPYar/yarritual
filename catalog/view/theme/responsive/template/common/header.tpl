@@ -141,12 +141,13 @@
 							 color: #E4E4E4; text-shadow: 1px 1px 3px #000;">
 								<span style="
 										 display: block;
-										 text-align: end;
+										 /*text-align: end;*/
 										 /*position: relative;*/
 										 /*top: -77px;*/
 										 /*left: 283px;*/
 										 /* float: left; */
-									"><span class="phone-code" style="
+									">
+									<span class="phone-code" style="
 										 /*color: #E4E4E4; text-shadow: 1px 1px 3px #000;*/
 										 /*position: relative;*/
 										 /*left: -41px;*/
@@ -154,7 +155,7 @@
 										 /*font-size: 16px;*/
 										 /*margin-right: 18px;*/
 									">(4852)</span>
-										<span class="phone-number" style="
+									<span class="phone-number" style="
 										 /*color: #E4E4E4; text-shadow: 1px 1px 3px #000;*/
 										 /*font-size: 37px;*/
 										 /*position: relative;*/
@@ -176,14 +177,20 @@
 						</div>
 					</div>
 					<div class="headmenu">
-						<ul class="menu1">
-							<li><a href='/' title="Перейти на главную">Главная</a></li>
-							<li><a href='/yslugi' title="Организация похорон">Организация похорон</a></li>
-						</ul>
-						<ul class="menu2">
-							<li><a href='/pamjatniki/' title="Памятники">Памятники</a></li>
-							<li><a href='/contact-us/' title="Посмотреть наши контакты">Контакты</a></li>
-						</ul>
+						<input type="checkbox" id="menu-checkbox">
+						<div class="headmenu__wrapper">
+							<label for="menu-checkbox" class="headmenu__trigger"></label>
+							<div class="headmenu__container">
+								<ul class="menu1">
+									<li><a href='/' title="Перейти на главную">Главная</a></li>
+									<li><a href='/yslugi' title="Организация похорон">Организация похорон</a></li>
+								</ul>
+								<ul class="menu2">
+									<li><a href='/pamjatniki/' title="Памятники">Памятники</a></li>
+									<li><a href='/contact-us/' title="Посмотреть наши контакты">Контакты</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
