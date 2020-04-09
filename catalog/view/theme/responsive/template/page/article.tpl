@@ -8,10 +8,10 @@
           <?php } ?>
 		</div>
 		<h1><?php echo $heading_title; ?></h1>
-		<img alt="" class="imgbord" src="/img/lenu.png" style="position: relative;margin-bottom: 40px;">
+		<img alt="" class="imgbord" src="/img/lenu.png" <!--style="position: relative;margin-bottom: 40px;-->">
        <?php if ($description) {
            ?>
-			 <div class="article-info" style="float: left;width: 640px;">
+			 <div class="article-info" <!--style="float: left;width: 640px;"-->
               <?php if ($thumb && $description) { ?>
 					  <div class="image" style="float:left; margin-right: 5px;"><img src="<?php echo $thumb; ?>"
 																										  alt="<?php echo $heading_title; ?>"/>

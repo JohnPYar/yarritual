@@ -127,10 +127,10 @@
 									г. Ярославль, ул. Чкалова, 4 А (Траурный зал)</span>
 							</div>
 						</div>
-						<div class="head__logo">
+                        <div class="head__logo">
 							<div class="logo">
 								<a href="/" title="Перейти на главную" class="logoheaderurl">
-									<img src="http://localhost:8888/catalog/view/theme/default/image/logo_new.png">
+									<img src="catalog/view/theme/default/image/logo_new.png">
 								</a>
 							</div>
 						</div>
