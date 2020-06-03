@@ -93,10 +93,10 @@
 		<div class="header">
 			<div class="container">
 				<div class="head">
-					<div class="head__top">
+					<div itemscope itemtype="http://schema.org/Organization" class="head__top">
 						<div class="head__left">
 							<div class="company-name">
-								<span>Похоронный дом "ЯрРитуалСервис"</span>
+								<span itemprop="name">Похоронный дом "ЯрРитуалСервис"</span>
 							</div>
 							<div class="adress">
 								<!--				  		<span style="-->
@@ -109,14 +109,14 @@
 								<!--							 color: #E4E4E4;-->
 								<!--							 text-shadow: 1px 1px 3px #000;-->
 								<!--							">Похоронный дом "ЯрРитуалСервис"</span>-->
-								<span> <!--style="
+								<span itemprop="address"> <!--style="
 							 position: relative;
 							 top: -8px;
 							 left: -18px;
 							 color: #E4E4E4; text-shadow: 1px 1px 3px #000;
 							 display: block;
 							"-->г. Ярославль, ул. Салтыкова-Щедрина, 3 <br></span>
-								<span><!--style="
+								<span itemprop="address"><!--style="
 							 position: relative;
 							 top: -8px;
 							 left: -18px;
@@ -155,13 +155,13 @@
 										 /*font-size: 16px;*/
 										 /*margin-right: 18px;*/
 									">(4852)</span>
-									<span class="phone-number" style="
+									<span itemprop="telephone" style="
 										 /*color: #E4E4E4; text-shadow: 1px 1px 3px #000;*/
 										 /*font-size: 37px;*/
 										 /*position: relative;*/
 										 /*top: 63px;*/
 										 /*left: -23px;*/
-									">944-449</span>
+									"><a class="phone-number" href="tel:+79019944449">944-449</a></span>
 								</span>
 								<span class="work-time" style="
 									 /*color: #E4E4E4; text-shadow: 1px 1px 3px #000;*/
